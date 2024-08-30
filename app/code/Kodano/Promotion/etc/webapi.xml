@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/promotions" method="GET">
+        <service class="Kodano\Promotion\Api\PromotionManagementInterface" method="getPromotions"/>
+        <resources>
+            <resource ref="Kodano_Promotion::index"/>
+        </resources>
+    </route>
+    <route url="/V1/promotion-groups" method="GET">
+        <service class="Kodano\Promotion\Api\PromotionManagementInterface" method="getPromotionGroups"/>
+        <resources>
+            <resource ref="Kodano_Promotion::index_group"/>
+        </resources>
+    </route>
+    <route url="/V1/promotion/save" method="POST">
+        <service class="Kodano\Promotion\Api\PromotionManagementInterface" method="savePromotion"/>
+        <resources>
+            <resource ref="Kodano_Promotion::create"/>
+        </resources>
+    </route>
+    <route url="/V1/promotion-group/save" method="POST">
+        <service class="Kodano\Promotion\Api\PromotionManagementInterface" method="savePromotionGroup"/>
+        <resources>
+            <resource ref="Kodano_Promotion::create_group"/>
+        </resources>
+        <data>
+            <parameter name="promotionId">%promotion_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/promotion/delete/:promotionId" method="DELETE">
+        <service class="Kodano\Promotion\Api\PromotionManagementInterface" method="deletePromotion"/>
+        <resources>
+            <resource ref="Kodano_Promotion::delete"/>
+        </resources>
+    </route>
+    <route url="/V1/promotion-group/delete/:promotionGroupId" method="DELETE">
+        <service class="Kodano\Promotion\Api\PromotionManagementInterface" method="deletePromotionGroup"/>
+        <resources>
+            <resource ref="Kodano_Promotion::delete_group"/>
+        </resources>
+    </route>
+</routes>
