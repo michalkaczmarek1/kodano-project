@@ -11,6 +11,8 @@
 
 ## Install Application
 ```
+composer install \
+
 bin/magento setup:install \
 --backend-frontname=backend \
 --amqp-host=rabbitmq \
