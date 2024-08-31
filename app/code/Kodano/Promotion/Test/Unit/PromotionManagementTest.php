@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Magento\TestFramework\Inspection\Kodano\Promotion\Model;
+namespace Kodano\Promotion\Test\Unit;
 
 use Kodano\Promotion\Api\Data\PromotionGroupInterface;
 use Kodano\Promotion\Api\Data\PromotionGroupSearchResultsInterface;
